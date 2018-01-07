@@ -1,18 +1,13 @@
 {
   "name": "numenc",
   "version": "1.0.0",
-  "description": "Encodes numerals as alpha characters",
+  "author": "Michael Rhodes",
   "main": "encode.js",
-  "devDependencies": {
-    "tape": "~4.6.3"
-  },
+  "license": "MIT",
   "scripts": {
     "test": "tape test.js"
   },
-  "keywords": [
-    "number",
-    "alpha"
-  ],
-  "author": "Michael Rhodes",
-  "license": "MIT"
+  "devDependencies": {
+    "tape": "~4.6.3"
+  }
 }
