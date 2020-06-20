@@ -1,11 +1,9 @@
-var c = ['z','o','t','h','r','v','x','s','e','n']
+var charset = require('./charset')
 
-module.exports = numenc
+module.exports = encode
 
-function numenc (num) {
-  if (num == null) return
-  var s = '', i = 0
-  var n = ('' + num).split('')
-  while (n[i]) s += c[n[i++]]
-  return s
+function encode (num) {
+  var str = '', c = ('' + num).split(''), i = 0
+  while (c[i]) str += charset[c[i++]]
+  return str.length === c.length ? str : null
 }

@@ -1,14 +1,13 @@
-var c = ['z','o','t','h','r','v','x','s','e','n']
+var charset = require('./charset')
 
-module.exports = numdec
+module.exports = decode
 
-function numdec (str) {
-  if (str == null) return
-  var ndx, s = '', i = 0
-  while (str[i]) {
-    ndx = c.indexOf(str[i++])
-    if (!~ndx) throw new Error('invalid encoding')
-    s += ndx
+function decode (str) {
+  var ndx, num = '', i = 0
+  str = '' + str; while (str[i]) {
+    ndx = charset.indexOf(str[i++])
+    if (!~ndx) return null
+    num += ndx
   }
-  return +s
+  return num ? +num : null
 }
