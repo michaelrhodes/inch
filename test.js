@@ -1,23 +1,19 @@
-var test = require('tape')
 var enc = require('./encode')
 var dec = require('./decode')
+var assert = console.assert
 
-test('it encodes', function (assert) {
-  assert.equal(enc(2000), 'tzzz')
-  assert.equal(enc(666), 'xxx')
-  assert.equal(enc(10), 'oz')
-  assert.equal(enc(5), 'v')
-  assert.equal(enc(0), 'z')
-  assert.equal(enc(), void 0)
-  assert.end()
-})
+// Encode
+assert(enc(2000) === 'tzzz')
+assert(enc(666) === 'xxx')
+assert(enc(10) === 'oz')
+assert(enc(5) === 'v')
+assert(enc(0) === 'z')
+assert(enc() === void 0)
 
-test('it decodes', function (assert) {
-  assert.equal(dec('tzzz'), 2000)
-  assert.equal(dec('xxx'), 666)
-  assert.equal(dec('oz'), 10)
-  assert.equal(dec('v'), 5)
-  assert.equal(dec('z'), 0)
-  assert.equal(dec(), void 0)
-  assert.end()
-})
+// Decode
+assert(dec('tzzz') === 2000)
+assert(dec('xxx') === 666)
+assert(dec('oz') === 10)
+assert(dec('v') === 5)
+assert(dec('z') === 0)
+assert(dec() === void 0)

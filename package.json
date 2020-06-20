@@ -5,9 +5,9 @@
   "main": "encode.js",
   "license": "MIT",
   "scripts": {
-    "test": "tape test.js"
+    "test": "dexy test.js"
   },
   "devDependencies": {
-    "tape": "~4.6.3"
+    "dexy": "github:michaelrhodes/dexy#1.0.2"
   }
 }
